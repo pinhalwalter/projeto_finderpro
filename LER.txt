@@ -1,0 +1,5 @@
+quando for rodar o front use: "npx serve ." dentro da pasta "tela-main"
+para entrar na pasta "tela-main" use "cd tela-main" no terminal cmd
+
+
+backend rodar com "node index.js"m não esquecer de usar "npm install" antes
