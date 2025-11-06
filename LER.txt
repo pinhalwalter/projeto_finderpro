@@ -4,4 +4,3 @@ para entrar na pasta "tela-main" use "cd tela-main" no terminal cmd
 
 backend rodar com "node index.js"m não esquecer de usar "npm install" antes
 
-coloque tudo dentro de uma pasta para facilitar quando tirar do .zip
