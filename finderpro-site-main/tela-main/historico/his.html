@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Histórico - FinderPro</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="his.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="historico">
+
+  <main class="container">
+    <section class="card">
+      <h2>Seu Histórico de Buscas</h2>
+      <div class="history-controls">
+        <input type="date" id="searchDate" />
+        <button id="clearSelected">Apagar Selecionados</button>
+      </div>
+      <button id="selectAll">Selecionar Todos</button>
+      <ul id="historyList"></ul>
+    </section>
+  </main>
+
+  <a href="../index.html" class="back-btn">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="his.js"></script>
+</body>
+
+</html>

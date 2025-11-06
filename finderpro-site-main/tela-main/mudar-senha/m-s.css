@@ -1,0 +1,95 @@
+/* ===== RESET GERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #080808, #0d1117);
+  color: white;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  background: rgba(255, 255, 255, 0.08); /* igual ao login */
+  padding: 25px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUTS ===== */
+.input-box {
+  margin: 15px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.15); /* padronizado */
+  color: white;
+}
+
+.input-box input::placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ===== BOTÃO PRINCIPAL ===== */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #4db6c9;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #276c79;
+}
+
+/* ===== BOTÃO FLUTUANTE ===== */
+#Voltar-para-o-site {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4db6c9;
+  color: rgb(6, 6, 6);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Voltar-para-o-site:hover {
+  background-color: #276c79;
+  color: #fff;
+  transform: scale(1.1);
+}

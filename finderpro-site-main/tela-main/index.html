@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>finderPro-site</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <h1>FinderPro</h1>
+    <p>Busque através de <strong>link</strong> e achamos as melhores ofertas.</p>
+    <nav>
+      <ul>
+        <li><a href="javascript:void(0);" id="profileBtn"><i data-lucide="user"></i><span
+              class="tooltip">Perfil</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Menu perfil do usuário -->
+  <div class="profile-container" id="profileContainer">
+    <div class="profile-menu" id="profileMenu">
+      <!-- Estado deslogado -->
+      <div class="profile-menu-item" id="loginBtn">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Adicionar conta</span>
+      </div>
+
+      <div class="profile-info" id="profileInfo" style="display:none;">
+        <p><strong></strong></p>
+        <p></p>
+      </div>
+      <a class="profile-menu-item" id="changePass" href="mudar-senha/m-s.html" style="display:none;">
+        <i class="fa-solid fa-pen"></i><span>Mudar senha</span>
+      </a>
+      <a class="profile-menu-item" id="history" href="historico/his.html" style="color:white;text-decoration:none;">
+        <i class="fas fa-history"></i><span>Histórico</span>
+      </a>
+      <div class="profile-menu-item" id="logoutBtn" style="display:none;">
+        <i class="fas fa-sign-out-alt"></i><span>Sair do perfil</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela principal -->
+  <main class="container">
+    <section class="card">
+      <h2>Encontre seu produto</h2>
+      <form id="form-texto" class="row">
+        <input id="q" type="text" placeholder="Cole um link aqui.." required />
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="results-head">
+        <h2>Resultados</h2>
+        <div id="status" class="status"></div>
+      </div>
+      <div id="lista" class="grid"></div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <span>@2025 | B.E.G.ME.MI</span>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

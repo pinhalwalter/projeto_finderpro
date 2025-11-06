@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(8, 8, 8), #0d1117);
+    color: white;
+}
+
+.container {
+    background: #16181d;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 350px;
+    text-align: center;
+    border: 1px solid #232733;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin: 15px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.3);
+    color: white;
+}
+
+.input-box input::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4db6c9;
+    color: rgb(6, 6, 6);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #276c79;
+    color: #fff;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #a9b0bd;
+    text-align: center;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+
+.container a {
+    color: var(--brand);       /* mesma cor dos botões do site */
+    font-size: 14px;           /* tamanho parecido com textos do formulário */
+    text-decoration: none;     /* remove o sublinhado */
+    transition: 0.3s;          /* efeito suave */
+}
+
+.container a:hover {
+    color: #8efff6;            /* cor de destaque ao passar o mouse */
+    text-decoration: underline; /* opcional */
+}
+
+.remember-forgot {
+    color: #a9b0bd;
+    display: flex;
+    justify-content: space-between; /* afasta os elementos */
+    font-size: 14px;
+    margin-bottom: 15px;
+    width: 100%; /* garante ocupar toda a largura do container */
+}

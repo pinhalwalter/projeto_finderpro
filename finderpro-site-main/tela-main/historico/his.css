@@ -1,0 +1,160 @@
+/* ============================ */
+/* Histórico - estilos específicos */
+
+body.historico {
+  background: #0f1013;
+  color: #f1f5f9;
+  font-family: system-ui, sans-serif;
+}
+
+/* Esconder a barra de topo apenas nesta página */
+body.historico .topbar {
+  display: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px 20px;
+}
+
+.card {
+  background: #16181d;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Histórico - lista de itens */
+#historyList li {
+  background: #1f2229;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  /* aumenta o espaçamento entre itens */
+  padding: 14px 12px;
+  /* mais confortável */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+#historyList li:hover {
+  background: #2a2f3b;
+}
+
+li label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+li .date {
+  font-size: 12px;
+  color: #a9b0bd;
+  margin-left: auto;
+}
+
+li span.valor {
+  font-weight: bold;
+  color: #4db6c9;
+}
+
+/* Histórico - botões de controle */
+.history-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  /* mais espaço abaixo dos botões */
+  flex-wrap: wrap;
+}
+
+.history-controls button {
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 140px;
+  max-width: 200px;
+  background: var(--azul);
+  color: rgb(6, 6, 6);
+}
+
+.history-controls input[type="date"],
+.history-controls button {
+  flex: 1;
+  border: 1px solid #2a2f3b;
+  font-size: 14px;
+}
+
+.history-controls input[type="date"] {
+  background: #0f1218;
+  color: #fff;
+}
+
+ul li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #2a2f3b;
+  display: flex;
+  align-items: center;
+}
+
+.history-controls button:hover {
+  background-color: #276c79;
+  color: #fff;
+  transform: none;
+}
+
+/* Botão de voltar redondo */
+.back-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4db6c9;
+  color: rgb(6, 6, 6);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background-color: #276c79;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Preview de imagens no histórico, se houver */
+.preview img {
+  max-width: 180px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #252a36;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px;
+}
+
+/* Botão Selecionar Todos */
+#selectAll {
+  background-color: #3d97a8;
+  color: rgb(6, 6, 6);
+  font-weight: 700;
+}
+
+#selectAll:hover {
+  background-color: #276c79;
+  color: #fff;
+}

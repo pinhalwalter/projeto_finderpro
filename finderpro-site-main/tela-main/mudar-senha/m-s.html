@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mudar Senha</title>
+  <link rel="stylesheet" href="m-s.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Mudar Senha</h1>
+    <form id="changePassForm">
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+      </div>
+      <div class="input-box">
+        <input type="password" id="newPassword" placeholder="Nova senha" required />
+      </div>
+      <div class="input-box">
+        <input type="password" id="confirmPassword" placeholder="Confirme a nova senha" required />
+      </div>
+      <button type="submit" class="btn">Salvar</button>
+    </form>
+  </div>
+
+  <button id="Voltar-para-o-site" onclick="window.location.href='../index.html'">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+
+  <script>
+    const form = document.getElementById('changePassForm');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const newPass = document.getElementById('newPassword').value.trim();
+      const confirmPass = document.getElementById('confirmPassword').value.trim();
+
+      if (newPass !== confirmPass) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      try {
+        const resposta = await fetch("http://localhost:3000/usuarios/mudar-senha", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, novaSenha: newPass })
+        });
+
+        const dados = await resposta.json();
+
+        if (resposta.ok) {
+          alert(dados.mensagem);
+          form.reset();
+          window.location.href = "../login-cadastro/login.html";
+        } else {
+          alert(dados.mensagem);
+        }
+      } catch (erro) {
+        alert("Erro ao conectar com o servidor.");
+        console.error(erro);
+      }
+    });
+  </script>
+</body>
+</html>

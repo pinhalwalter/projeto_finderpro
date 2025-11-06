@@ -1,0 +1,284 @@
+/*------------------------------------------ Página Inicial --------------------------------------*/
+/* Paleta e variáveis globais */
+:root {
+  --bg: #0f1013;
+  --card: #16181d;
+  --muted: #a9b0bd;
+  --txt: #f1f5f9;
+  --azul: #4db6c9;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --highlight: #8efff6;
+  --white: #fff; 
+}
+
+
+/* Configuração base do site */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, rgb(8, 8, 8), #0d1117);
+  color: var(--txt);
+  font: 16px/1.5 system-ui, Segoe UI, Roboto, Arial;
+}
+
+
+/* Topo do site */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: black;
+  color: #fff;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid #20232b;
+}
+.topbar h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+}
+.topbar p {
+  margin: 0;
+  color: var(--muted);
+}
+
+
+/* Estrutura principal do conteúdo (cards e grid) */
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+.card {
+  background: var(--card);
+  border: 1px solid #232733;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+
+/* Buscas por link e imagem */
+.row {
+  display: flex;
+  gap: 10px;
+}
+.row input[type="text"] {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #2a2f3b;
+  background: #0f1218;
+  color: var(--txt);
+}
+.row input[type="file"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px dashed #2a2f3b;
+  background: #0f1218;
+  color: var(--muted);
+}
+
+
+/* Botões gerais do site */
+button {
+  padding: 12px 16px;
+  border: 0;
+  background: var(--azul);
+  color: rgb(6, 6, 6);
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .2s transform ease;
+}
+button:hover {
+  background: #276c79;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+
+/* Textos de "Dica" */
+.hint {
+  color: var(--muted);
+  display: block;
+  margin-top: 8px;
+}
+
+
+/* Cabeçalho dos "Resultados" */
+.results-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.status {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* Cards dos produtos encontrados */
+.grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.card-item {
+  background: #11141a;
+  border: 1px solid #252a36;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background: #0b0d12;
+}
+.card-item .info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-item .title {
+  font-weight: 600;
+}
+.card-item .price {
+  color: var(--highlight);
+  font-weight: 700;
+}
+.card-item a {
+  text-decoration: none;
+  color: #081017;
+  background: var(--azul);
+  padding: 10px 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  text-align: center;
+  padding: 10px 0;
+  color: #a9b0bd;
+}
+
+
+/* Ícones do menu (perfil) */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  display: flex;
+  position: relative;
+}
+nav a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 20px;
+  transition: border-color 0.3s, color 0.3s;
+  position: relative;
+  text-decoration: none;
+  z-index: 1002;   
+}
+nav a svg,
+nav a i {
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
+.tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e1e2f;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+nav a:hover .tooltip {
+  opacity: 1;
+}
+
+
+/*-------------------------------------- Menu do perfil do usuário -------------------------------*/
+.profile-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+.profile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  width: 220px;
+  padding: 10px 0;
+}
+.profile-menu.active {
+  display: block;
+}
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.profile-menu-item:hover {
+  background-color: #3b3b4b;
+}
+.profile-info {
+  padding: 10px 15px;
+  border-bottom: 1px solid #444;
+}
+.profile-info p {
+  margin: 5px 0;
+}
